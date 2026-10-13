@@ -126,7 +126,7 @@ body.touchy #touch:not(.playing) { display: none; }
 #touch .btn.p { background: rgba(255,80,120,.45); } #touch .btn.k { background: rgba(80,150,255,.45); }
 #touch .btn.on { transform: scale(.9); filter: brightness(1.6); }
 #touch .extra { position: absolute; right: calc(2vw + 230px); bottom: 4vh; display: flex; flex-direction: column; gap: 9px; }
-#touch .btn.dg { background: rgba(120,255,160,.4); } #touch .btn.easy { background: rgba(255,200,60,.5); } #touch .btn.sp { background: rgba(255,120,40,.55); }
+#touch .btn.dg { background: rgba(120,255,160,.4); } #touch .btn.easy { background: rgba(255,200,60,.5); } #touch .btn.sp { background: rgba(255,120,40,.55); } #touch .btn.sp2 { background: rgba(200,80,255,.5); }
 #touch .pz { position: absolute; right: 2vw; top: 2vh; width: 46px; height: 46px; background: rgba(0,0,0,.4); font-size: 18px; }
 body.touchy:not(.portrait) #touch .stick, body.touchy:not(.portrait) #touch .pad, body.touchy:not(.portrait) #touch .extra { opacity: .8; }
 /* 縦持ち：下半分を操作盤に */
@@ -140,3 +140,15 @@ body.portrait.touchy #touch .btn { width: 76px; height: 76px; font-size: 19px; }
 body.portrait.touchy #touch .pad { grid-template-columns: repeat(3, 76px); }
 body.portrait.touchy #touch .stick { width: 170px; height: 170px; }
 body.portrait.touchy #touch .knob { left: 50px; top: 50px; }
+#moves .tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+#moves .tab { display: flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 14px; background: rgba(255,255,255,.1); font-weight: 900; font-size: 18px; cursor: pointer; }
+#moves .tab img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
+#moves .tab.on { background: linear-gradient(90deg, #ff4a8a, #ff9a3a); }
+#moves td.ez { color: #9fe8ff; font-weight: 900; text-align: right; }
+#moves tr.hd td { color: #ffd040; font-weight: 900; font-size: 18px; }
+#moves .qt { font-size: 20px; opacity: .85; }
+#moves .close { cursor: pointer; }
+#select .back.man { left: auto; right: 20px; }
+#title .menu { top: 238px; }
+#title .menu .mi { margin: 7px 0; padding: 6px 0; font-size: 28px; }
+#moves .panel { touch-action: pan-y; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
