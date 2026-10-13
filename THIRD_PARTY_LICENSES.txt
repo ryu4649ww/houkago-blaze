@@ -1,0 +1,17 @@
+放課後ブレイズ　使用した素材と道具
+
+[声] VOICEVOX（https://voicevox.hiroshiba.jp/）で合成した音声。各音声ライブラリの利用規約に従い、クレジットを表記しています。
+  VOICEVOX:春歌ナナ（天野ひなた）／VOICEVOX:雨晴はう（白石みゆ）／VOICEVOX:春日部つむぎ（星野るる）／VOICEVOX:中部つるぎ（桐生あかね）
+  VOICEVOX:冥鳴ひまり（霧島ゆかり）／VOICEVOX:黒沢冴白（早乙女カレン）／VOICEVOX:波音リツ（黒崎レイカ）／VOICEVOX:四国めたん（九条さくら）
+  VOICEVOX:九州そら（鷹宮玲子）／VOICEVOX:青山龍星（アナウンス）
+  ※声は各キャラクターの声として当てています（各規約で別キャラクターへの声当てが認められていることを確認済み）。
+
+[音楽] すべてオリジナル曲。演奏・録音に次のフリーのソフトウェア音源を使用（配布しているのは録音した音声のみ）。
+  Dexed（DX7互換FMシンセ, GPL-3.0, https://github.com/asb2m10/dexed）
+  Surge XT（GPL-3.0, https://surge-synthesizer.github.io/）
+  ドラムと効果音は自作の合成音。
+
+[絵] キャラクターの立ち絵・背景は Animagine XL 4.0（Cagliostro Research Lab, CreativeML Open RAIL++-M）で生成した画像をもとに加工（背景の切り抜きに rembg / isnet-anime）。
+  試合中のキャラクターはプログラムで描いています。
+
+[文字] Dela Gothic One、M PLUS Rounded 1c（SIL Open Font License 1.1, Google Fonts から読み込み）

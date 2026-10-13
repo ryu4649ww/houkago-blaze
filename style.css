@@ -1,0 +1,142 @@
+:root { --gameH: 100vh; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; height: 100%; background: #12081c; color: #fff; overflow: hidden; font-family: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif; user-select: none; -webkit-user-select: none; touch-action: none; }
+#stagebox { position: absolute; width: 1280px; height: 720px; transform-origin: 0 0; overflow: hidden; background: #000; }
+#game { position: absolute; inset: 0; width: 1280px; height: 720px; }
+#ui { position: absolute; inset: 0; }
+.screen { position: absolute; inset: 0; display: none; }
+.screen.on { display: block; }
+.hide { display: none !important; }
+.mi { cursor: pointer; transition: transform .12s, background .12s; }
+
+/* ロゴ */
+.logo { position: absolute; left: 0; right: 0; top: 150px; text-align: center; }
+.logo small { display: block; font-size: 30px; font-weight: 900; letter-spacing: .3em; color: #ffd6f0; text-shadow: 0 2px 0 #4a1040; }
+.logo b { display: block; font-family: "Dela Gothic One", sans-serif; font-weight: 400; font-size: 132px; line-height: 1.05; background: linear-gradient(#fff6c0, #ffc030 55%, #ff5a20); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-stroke: 3px #3a0a2a; filter: drop-shadow(0 6px 0 #3a0a2a) drop-shadow(0 0 22px rgba(255,120,60,.6)); }
+.logo i { display: block; font-style: normal; font-family: "Dela Gothic One", sans-serif; font-size: 34px; letter-spacing: .5em; color: #fff; opacity: .85; }
+#boot .press { position: absolute; left: 0; right: 0; top: 500px; text-align: center; font-size: 36px; font-weight: 900; animation: blink 1.2s infinite; }
+#boot .bar { position: absolute; left: 440px; width: 400px; top: 560px; height: 10px; border-radius: 5px; background: rgba(255,255,255,.2); overflow: hidden; }
+#boot .bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #ffd040, #ff6a3a); }
+#boot .note { position: absolute; bottom: 30px; width: 100%; text-align: center; opacity: .7; font-size: 20px; }
+#boot { cursor: pointer; }
+@keyframes blink { 50% { opacity: .35; } }
+
+/* タイトル */
+#title .cast { position: absolute; inset: 0; display: flex; justify-content: center; align-items: flex-end; gap: 0; opacity: .55; }
+#title .cast img { height: 560px; margin: 0 -52px; filter: drop-shadow(0 0 10px var(--c)); object-fit: contain; max-width: 220px; }
+#title .logo.small { top: 40px; }
+#title .logo.small b { font-size: 108px; }
+#title .menu { position: absolute; left: 490px; width: 300px; top: 262px; }
+#title .menu .mi { margin: 9px 0; padding: 7px 0; text-align: center; font-size: 30px; font-weight: 900; background: rgba(30,10,40,.72); border: 3px solid rgba(255,255,255,.35); border-radius: 30px; }
+#title .menu .mi.cur { background: linear-gradient(90deg, #ff4a8a, #ff9a3a); border-color: #fff; transform: scale(1.08); box-shadow: 0 0 22px rgba(255,140,80,.7); }
+#title .keys { position: absolute; bottom: 12px; width: 100%; text-align: center; font-size: 18px; opacity: .85; text-shadow: 0 2px 2px #000; }
+
+/* キャラ選択 */
+#select .mode { position: absolute; top: 18px; left: 0; right: 0; text-align: center; font-family: "Dela Gothic One"; font-size: 40px; color: #ffd040; text-shadow: 0 3px 0 #3a0a2a; }
+#grid { position: absolute; left: 330px; width: 620px; top: 450px; display: grid; grid-template-columns: repeat(5, 116px); gap: 10px; justify-content: center; }
+#grid .cell { position: relative; height: 104px; border-radius: 14px; overflow: hidden; background: var(--c); border: 4px solid rgba(255,255,255,.4); cursor: pointer; }
+#grid .cell img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; }
+#grid .cell span { position: absolute; left: 0; right: 0; bottom: 0; font-size: 17px; font-weight: 900; text-align: center; background: rgba(0,0,0,.55); }
+#grid .cell.p1 { border-color: #ff4a6a; box-shadow: 0 0 18px #ff4a6a; }
+#grid .cell.p2 { border-color: #4ab0ff; box-shadow: 0 0 18px #4ab0ff; }
+#grid .cell.p1.p2 { border-color: #c070ff; }
+.pv { position: absolute; left: 0; top: 0; width: 520px; height: 720px; pointer-events: none; }
+.pv img { position: absolute; left: 10px; bottom: 0; height: 690px; max-width: 500px; object-fit: contain; object-position: bottom; filter: drop-shadow(0 0 16px rgba(255,255,255,.35)); }
+.pv.r { left: auto; right: 0; } .pv.r img { left: auto; right: 10px; }
+.pv .info { position: absolute; left: 24px; top: 80px; width: 330px; }
+.pv.r .info { left: auto; right: 24px; text-align: right; }
+.pv .nm { font-family: "Dela Gothic One"; font-size: 44px; text-shadow: 0 3px 0 #3a0a2a, 0 0 12px #000; }
+.pv .cl { font-size: 24px; font-weight: 900; color: #ffd040; text-shadow: 0 2px 2px #000; }
+.pv .qt { margin-top: 8px; font-size: 21px; font-weight: 800; text-shadow: 0 2px 3px #000; }
+.pv .tag { position: absolute; left: 24px; top: 30px; font-family: "Dela Gothic One"; font-size: 34px; color: #ff4a6a; text-shadow: 0 2px 0 #000; }
+.pv.r .tag { left: auto; right: 24px; color: #4ab0ff; }
+.pv.done img { filter: drop-shadow(0 0 22px #ffd040) brightness(1.08); }
+.pv.done .tag::after { content: ' OK!'; }
+#select .hint { position: absolute; bottom: 8px; width: 100%; text-align: center; font-size: 19px; text-shadow: 0 2px 2px #000; }
+#select .back { position: absolute; left: 20px; bottom: 12px; padding: 6px 18px; border-radius: 20px; background: rgba(0,0,0,.5); font-weight: 900; cursor: pointer; z-index: 3; }
+
+/* VS */
+#vs .side { position: absolute; top: 0; width: 640px; height: 720px; overflow: hidden; }
+#vs .l { left: 0; background: linear-gradient(110deg, #ff3a6a 0%, #7a1040 70%, transparent 70.2%); }
+#vs .r { right: 0; background: linear-gradient(-70deg, #3a8aff 0%, #10306a 70%, transparent 70.2%); }
+#vs img { position: absolute; bottom: -10px; height: 700px; object-fit: contain; }
+#vs .l img { left: -20px; } #vs .r img { right: -20px; transform: scaleX(-1); }
+#vs .nm { position: absolute; top: 470px; font-family: "Dela Gothic One"; font-size: 54px; text-shadow: 0 4px 0 #000; }
+#vs .cl { position: absolute; top: 540px; font-size: 26px; font-weight: 900; color: #ffd040; text-shadow: 0 2px 2px #000; }
+#vs .line { position: absolute; top: 590px; width: 520px; font-size: 22px; font-weight: 800; background: rgba(0,0,0,.55); padding: 10px 16px; border-radius: 12px; }
+#vs .l .nm, #vs .l .cl, #vs .l .line { left: 40px; }
+#vs .r .nm, #vs .r .cl, #vs .r .line { right: 40px; text-align: right; }
+#vs .vsmark { position: absolute; left: 0; right: 0; top: 200px; text-align: center; font-family: "Dela Gothic One"; font-size: 200px; color: #fff6c0; -webkit-text-stroke: 6px #3a0a2a; text-shadow: 0 0 40px #ff9a3a; }
+#vs .label { position: absolute; top: 24px; width: 100%; text-align: center; font-size: 30px; font-weight: 900; text-shadow: 0 2px 3px #000; }
+#vs .stagename { position: absolute; top: 66px; width: 100%; text-align: center; font-size: 22px; font-weight: 800; opacity: .9; }
+#vs.anim .l { animation: inL .45s cubic-bezier(.2,.9,.3,1.2); } #vs.anim .r { animation: inR .45s cubic-bezier(.2,.9,.3,1.2); }
+#vs.anim .vsmark { animation: pop .6s .3s both cubic-bezier(.2,.9,.3,1.4); }
+@keyframes inL { from { transform: translateX(-700px); } } @keyframes inR { from { transform: translateX(700px); } }
+@keyframes pop { from { transform: scale(3); opacity: 0; } }
+
+/* 結果・コンティニュー・エンディング */
+#result img, #continue img, #ending img { position: absolute; left: 30px; bottom: 0; height: 700px; object-fit: contain; filter: drop-shadow(0 0 20px rgba(255,255,255,.4)); }
+#result .box, #continue .box { position: absolute; right: 60px; top: 150px; width: 600px; }
+#result .nm { font-family: "Dela Gothic One"; font-size: 56px; color: #ffd040; text-shadow: 0 4px 0 #3a0a2a; }
+#result .qt { margin: 14px 0; font-size: 28px; font-weight: 800; background: rgba(0,0,0,.5); padding: 14px 18px; border-radius: 14px; }
+#result .stat { font-size: 20px; opacity: .85; margin-bottom: 18px; }
+.btns .mi, #continue nav .mi { margin: 10px 0; padding: 10px 20px; font-size: 26px; font-weight: 900; background: rgba(30,10,40,.75); border: 3px solid rgba(255,255,255,.35); border-radius: 26px; text-align: center; }
+.btns .mi.cur, #continue nav .mi.cur { background: linear-gradient(90deg, #ff4a8a, #ff9a3a); border-color: #fff; }
+#continue .big { font-family: "Dela Gothic One"; font-size: 80px; color: #ff6a6a; text-shadow: 0 4px 0 #000; }
+#continue .num { font-family: "Dela Gothic One"; font-size: 140px; text-align: center; }
+#continue img { filter: grayscale(.8) brightness(.7); }
+#ending .text { position: absolute; right: 60px; top: 80px; width: 640px; font-size: 26px; font-weight: 800; line-height: 1.7; text-shadow: 0 2px 3px #000; }
+#ending .text p { margin: 0 0 8px; animation: fadein 1s; }
+@keyframes fadein { from { opacity: 0; transform: translateY(10px); } }
+#ending .skip { position: absolute; right: 30px; bottom: 24px; padding: 8px 24px; border-radius: 20px; background: rgba(0,0,0,.5); font-weight: 900; }
+
+/* 設定 */
+#options h2, #credits h2 { text-align: center; font-family: "Dela Gothic One"; font-size: 50px; margin: 40px 0 20px; color: #ffd040; }
+#options .rows { width: 700px; margin: 0 auto; }
+#options .row { display: flex; justify-content: space-between; padding: 12px 26px; margin: 8px 0; font-size: 26px; font-weight: 900; background: rgba(30,10,40,.75); border-radius: 18px; border: 3px solid rgba(255,255,255,.25); }
+#options .row.cur { border-color: #fff; background: linear-gradient(90deg, rgba(255,74,138,.85), rgba(255,154,58,.85)); }
+#options .hint { text-align: center; opacity: .8; }
+#credits .cr { width: 1000px; margin: 0 auto; font-size: 21px; line-height: 1.6; background: rgba(0,0,0,.45); padding: 16px 26px; border-radius: 16px; }
+#credits .mi { width: 200px; margin: 20px auto; text-align: center; padding: 10px; border-radius: 20px; font-weight: 900; font-size: 24px; background: linear-gradient(90deg, #ff4a8a, #ff9a3a); }
+
+/* 一時停止・技表 */
+.overlay { position: absolute; inset: 0; display: none; background: rgba(10,0,20,.6); z-index: 5; }
+.overlay.on { display: flex; align-items: center; justify-content: center; }
+.panel { width: 460px; padding: 26px; border-radius: 22px; background: rgba(30,12,44,.95); border: 3px solid #ffd040; }
+.panel.wide { width: 1120px; max-height: 680px; overflow: auto; }
+.panel h2 { margin: 0 0 14px; text-align: center; font-family: "Dela Gothic One"; color: #ffd040; }
+.panel .mi { margin: 8px 0; padding: 10px; text-align: center; font-size: 24px; font-weight: 900; border-radius: 16px; background: rgba(255,255,255,.08); }
+.panel .mi.cur { background: linear-gradient(90deg, #ff4a8a, #ff9a3a); }
+#moves table { width: 100%; border-collapse: collapse; font-size: 22px; margin-bottom: 12px; }
+#moves td { padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,.15); }
+#moves td.cmd { color: #ffe070; font-weight: 900; text-align: right; }
+#moves tr.su td { color: #ff9ac0; font-weight: 900; }
+#moves h3 { margin: 10px 0 4px; color: #8fd8ff; }
+#moves .close { text-align: center; opacity: .7; margin: 0; }
+
+/* タッチ操作 */
+#touch { display: none; }
+body.touchy #touch { display: block; position: fixed; inset: 0; pointer-events: none; z-index: 10; }
+body.touchy #touch.playing > * { pointer-events: auto; }
+body.touchy #touch:not(.playing) { display: none; }
+#touch .stick { position: absolute; left: 3vw; bottom: 4vh; width: 160px; height: 160px; border-radius: 50%; background: rgba(255,255,255,.12); border: 3px solid rgba(255,255,255,.4); touch-action: none; }
+#touch .knob { position: absolute; left: 45px; top: 45px; width: 70px; height: 70px; border-radius: 50%; background: rgba(255,255,255,.55); }
+#touch .pad { position: absolute; right: 2vw; bottom: 4vh; display: grid; grid-template-columns: repeat(3, 64px); gap: 9px; }
+#touch .btn { display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 50%; font-weight: 900; font-size: 17px; color: #fff; text-shadow: 0 1px 2px #000; touch-action: none; border: 3px solid rgba(255,255,255,.6); }
+#touch .btn.p { background: rgba(255,80,120,.45); } #touch .btn.k { background: rgba(80,150,255,.45); }
+#touch .btn.on { transform: scale(.9); filter: brightness(1.6); }
+#touch .extra { position: absolute; right: calc(2vw + 230px); bottom: 4vh; display: flex; flex-direction: column; gap: 9px; }
+#touch .btn.dg { background: rgba(120,255,160,.4); } #touch .btn.easy { background: rgba(255,200,60,.5); } #touch .btn.sp { background: rgba(255,120,40,.55); }
+#touch .pz { position: absolute; right: 2vw; top: 2vh; width: 46px; height: 46px; background: rgba(0,0,0,.4); font-size: 18px; }
+body.touchy:not(.portrait) #touch .stick, body.touchy:not(.portrait) #touch .pad, body.touchy:not(.portrait) #touch .extra { opacity: .8; }
+/* 縦持ち：下半分を操作盤に */
+body.portrait.touchy { background: #1a0a26; }
+body.portrait.touchy #touch .stick { left: 5vw; bottom: calc((100vh - var(--gameH)) / 2 - 90px); }
+body.portrait.touchy #touch .pad { right: 4vw; bottom: calc((100vh - var(--gameH)) / 2 - 80px); }
+body.portrait.touchy #touch .extra { right: 4vw; bottom: auto; top: calc(var(--gameH) + 14px); flex-direction: row; }
+body.portrait.touchy #touch .pz { top: calc(var(--gameH) + 14px); left: 4vw; right: auto; }
+@media (max-height: 420px) { #touch .btn { width: 54px; height: 54px; font-size: 15px; } #touch .pad { grid-template-columns: repeat(3, 54px); } #touch .stick { width: 130px; height: 130px; } #touch .knob { left: 33px; top: 33px; width: 58px; height: 58px; } #touch .extra { right: calc(2vw + 196px); } }
+body.portrait.touchy #touch .btn { width: 76px; height: 76px; font-size: 19px; }
+body.portrait.touchy #touch .pad { grid-template-columns: repeat(3, 76px); }
+body.portrait.touchy #touch .stick { width: 170px; height: 170px; }
+body.portrait.touchy #touch .knob { left: 50px; top: 50px; }
