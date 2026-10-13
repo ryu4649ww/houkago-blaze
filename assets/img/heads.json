@@ -1,0 +1,121 @@
+{
+ "hinata": {
+  "w": 237,
+  "h": 240,
+  "neck": [
+   103.4,
+   226.2
+  ],
+  "upp": 0.2263,
+  "tex": [
+   "top",
+   "apron",
+   "bottom",
+   "legwear",
+   "skin",
+   "hair"
+  ],
+  "colors": {
+   "top": "#5d5e9a",
+   "apron": "#f89e7a",
+   "bottom": "#5b5a8b",
+   "legwear": "#020204",
+   "skin": "#fdeae3",
+   "hair": "#ecd3c2"
+  }
+ },
+ "miyu": {
+  "w": 214,
+  "h": 240,
+  "neck": [
+   107.2,
+   149.2
+  ],
+  "upp": 0.3511,
+  "tex": [
+   "top",
+   "vest",
+   "bottom",
+   "legwear",
+   "skin",
+   "hair"
+  ],
+  "colors": {
+   "top": "#fafafd",
+   "vest": "#f8f9fb",
+   "bottom": "#48557a",
+   "legwear": "#fcfbff",
+   "skin": "#fbe7de",
+   "hair": "#dbdae1"
+  }
+ },
+ "ruru": {
+  "w": 257,
+  "h": 240,
+  "neck": [
+   74.2,
+   163.5
+  ],
+  "upp": 0.2684,
+  "tex": [
+   "top",
+   "hoodie",
+   "bottom",
+   "skin",
+   "shoes",
+   "hair"
+  ],
+  "colors": {
+   "top": "#05050a",
+   "hoodie": "#dddde8",
+   "bottom": "#f9c6d9",
+   "skin": "#f1edf4",
+   "shoes": "#f3eef5",
+   "hair": "#c27b8a"
+  }
+ },
+ "akane": {
+  "w": 237,
+  "h": 240,
+  "neck": [
+   65.3,
+   186.8
+  ],
+  "upp": 0.2762,
+  "tex": [
+   "top",
+   "bottom",
+   "skin",
+   "hair"
+  ],
+  "colors": {
+   "top": "#f8f8fb",
+   "bottom": "#7f89a0",
+   "skin": "#fde9dd",
+   "hair": "#59566a"
+  }
+ },
+ "yukari": {
+  "w": 176,
+  "h": 240,
+  "neck": [
+   82.6,
+   152.9
+  ],
+  "upp": 0.2826,
+  "tex": [
+   "top",
+   "bottom",
+   "cape",
+   "skin",
+   "hair"
+  ],
+  "colors": {
+   "top": "#526096",
+   "bottom": "#3e4a78",
+   "cape": "#ffffff",
+   "skin": "#f5e4df",
+   "hair": "#7f728e"
+  }
+ }
+}
