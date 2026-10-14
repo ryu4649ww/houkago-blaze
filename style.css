@@ -125,17 +125,17 @@ body.touchy #touch:not(.playing) { display: none; }
 #touch .btn { display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 50%; font-weight: 900; font-size: 17px; color: #fff; text-shadow: 0 1px 2px #000; touch-action: none; border: 3px solid rgba(255,255,255,.6); }
 #touch .btn.p { background: rgba(255,80,120,.45); } #touch .btn.k { background: rgba(80,150,255,.45); }
 #touch .btn.on { transform: scale(.9); filter: brightness(1.6); }
-#touch .extra { position: absolute; right: calc(2vw + 230px); bottom: 4vh; display: flex; flex-direction: column; gap: 9px; }
+#touch .extra { position: absolute; right: calc(2vw + 230px); bottom: 4vh; display: grid; grid-template-columns: repeat(2, 64px); gap: 9px; }
 #touch .btn.dg { background: rgba(120,255,160,.4); } #touch .btn.easy { background: rgba(255,200,60,.5); } #touch .btn.sp { background: rgba(255,120,40,.55); } #touch .btn.sp2 { background: rgba(200,80,255,.5); }
 #touch .pz { position: absolute; right: 2vw; top: 2vh; width: 46px; height: 46px; background: rgba(0,0,0,.4); font-size: 18px; }
-body.touchy:not(.portrait) #touch .stick, body.touchy:not(.portrait) #touch .pad, body.touchy:not(.portrait) #touch .extra { opacity: .8; }
+body.touchy:not(.portrait) #touch .stick, body.touchy:not(.portrait) #touch .pad, body.touchy:not(.portrait) #touch .extra { opacity: .68; }
 /* 縦持ち：下半分を操作盤に */
 body.portrait.touchy { background: #1a0a26; }
 body.portrait.touchy #touch .stick { left: 5vw; bottom: calc((100vh - var(--gameH)) / 2 - 90px); }
 body.portrait.touchy #touch .pad { right: 4vw; bottom: calc((100vh - var(--gameH)) / 2 - 80px); }
-body.portrait.touchy #touch .extra { right: 4vw; bottom: auto; top: calc(var(--gameH) + 14px); flex-direction: row; }
+body.portrait.touchy #touch .extra { right: 4vw; bottom: auto; top: calc(var(--gameH) + 14px); grid-template-columns: repeat(3, 76px); }
 body.portrait.touchy #touch .pz { top: calc(var(--gameH) + 14px); left: 4vw; right: auto; }
-@media (max-height: 420px) { #touch .btn { width: 54px; height: 54px; font-size: 15px; } #touch .pad { grid-template-columns: repeat(3, 54px); } #touch .stick { width: 130px; height: 130px; } #touch .knob { left: 33px; top: 33px; width: 58px; height: 58px; } #touch .extra { right: calc(2vw + 196px); } }
+@media (max-height: 420px) { #touch .btn { width: 54px; height: 54px; font-size: 15px; } #touch .pad { grid-template-columns: repeat(3, 54px); } #touch .stick { width: 130px; height: 130px; } #touch .knob { left: 33px; top: 33px; width: 58px; height: 58px; } #touch .extra { right: calc(2vw + 196px); grid-template-columns: repeat(2, 54px); } }
 body.portrait.touchy #touch .btn { width: 76px; height: 76px; font-size: 19px; }
 body.portrait.touchy #touch .pad { grid-template-columns: repeat(3, 76px); }
 body.portrait.touchy #touch .stick { width: 170px; height: 170px; }
@@ -152,3 +152,5 @@ body.portrait.touchy #touch .knob { left: 50px; top: 50px; }
 #title .menu { top: 238px; }
 #title .menu .mi { margin: 7px 0; padding: 6px 0; font-size: 28px; }
 #moves .panel { touch-action: pan-y; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
+
+#touch .btn.combo { background: rgba(120,220,255,.5); font-size: 14px; }
