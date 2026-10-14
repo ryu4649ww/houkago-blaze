@@ -75,7 +75,7 @@ html, body { margin: 0; height: 100%; background: #12081c; color: #fff; overflow
 @keyframes pop { from { transform: scale(3); opacity: 0; } }
 
 /* 結果・コンティニュー・エンディング */
-#result img, #continue img, #ending img { position: absolute; left: 30px; bottom: 0; height: 700px; object-fit: contain; filter: drop-shadow(0 0 20px rgba(255,255,255,.4)); }
+#result img, #continue img, #ending img.me { position: absolute; left: 30px; bottom: 0; height: 700px; object-fit: contain; filter: drop-shadow(0 0 20px rgba(255,255,255,.4)); }
 #result .box, #continue .box { position: absolute; right: 60px; top: 150px; width: 600px; }
 #result .nm { font-family: "Dela Gothic One"; font-size: 56px; color: #ffd040; text-shadow: 0 4px 0 #3a0a2a; }
 #result .qt { margin: 14px 0; font-size: 28px; font-weight: 800; background: rgba(0,0,0,.5); padding: 14px 18px; border-radius: 14px; }
@@ -85,8 +85,17 @@ html, body { margin: 0; height: 100%; background: #12081c; color: #fff; overflow
 #continue .big { font-family: "Dela Gothic One"; font-size: 80px; color: #ff6a6a; text-shadow: 0 4px 0 #000; }
 #continue .num { font-family: "Dela Gothic One"; font-size: 140px; text-align: center; }
 #continue img { filter: grayscale(.8) brightness(.7); }
-#ending .text { position: absolute; right: 60px; top: 80px; width: 640px; font-size: 26px; font-weight: 800; line-height: 1.7; text-shadow: 0 2px 3px #000; }
-#ending .text p { margin: 0 0 8px; animation: fadein 1s; }
+#ending { overflow: hidden; }
+#ending .ebg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: brightness(.55) saturate(1.05); transition: background-image .6s; }
+#ending img.guest { position: absolute; left: 330px; bottom: 0; height: 520px; object-fit: contain; opacity: .95; filter: drop-shadow(0 0 14px rgba(0,0,0,.6)); }
+#ending img.guest.hide { display: none; }
+#ending .panel { position: absolute; right: 40px; top: 50px; width: 680px; bottom: 80px; padding: 22px 30px; background: rgba(12,6,24,.72); border: 2px solid rgba(255,255,255,.25); border-radius: 18px; box-shadow: 0 8px 30px rgba(0,0,0,.5); display: flex; flex-direction: column; }
+#ending .ttl { font-family: "Dela Gothic One"; font-size: 30px; color: #ffd040; text-shadow: 0 3px 0 #3a0a2a; margin-bottom: 14px; }
+#ending .text { flex: 1; font-size: 23px; font-weight: 800; line-height: 1.6; text-shadow: 0 2px 3px #000; overflow: hidden; }
+#ending .text p { margin: 0 0 10px; animation: fadein .8s; }
+#ending .nav { display: flex; justify-content: space-between; font-size: 18px; font-weight: 900; opacity: .85; }
+#ending .nav .next { animation: blink 1.2s infinite; }
+@keyframes blink { 50% { opacity: .35; } }
 @keyframes fadein { from { opacity: 0; transform: translateY(10px); } }
 #ending .skip { position: absolute; right: 30px; bottom: 24px; padding: 8px 24px; border-radius: 20px; background: rgba(0,0,0,.5); font-weight: 900; }
 
