@@ -117,5 +117,70 @@
    "skin": "#f5e4df",
    "hair": "#7f728e"
   }
+ },
+ "reika": {
+  "w": 242,
+  "h": 240,
+  "neck": [
+   111.5,
+   209.5
+  ],
+  "upp": 0.1722,
+  "tex": [
+   "top",
+   "bottom",
+   "skin",
+   "hair"
+  ],
+  "colors": {
+   "top": "#fbf6f9",
+   "bottom": "#5f6a85",
+   "skin": "#fde0da",
+   "hair": "#777b8f"
+  }
+ },
+ "sakura": {
+  "w": 293,
+  "h": 240,
+  "neck": [
+   141.6,
+   223.6
+  ],
+  "upp": 0.1522,
+  "tex": [
+   "top",
+   "bottom",
+   "legwear",
+   "skin",
+   "hair"
+  ],
+  "colors": {
+   "top": "#bdb8d4",
+   "bottom": "#fddcec",
+   "legwear": "#a27577",
+   "skin": "#f6c9c4",
+   "hair": "#d4748e"
+  }
+ },
+ "reiko": {
+  "w": 287,
+  "h": 240,
+  "neck": [
+   160.0,
+   230.4
+  ],
+  "upp": 0.1649,
+  "tex": [
+   "top",
+   "bottom",
+   "skin",
+   "hair"
+  ],
+  "colors": {
+   "top": "#eff0f2",
+   "bottom": "#676076",
+   "skin": "#fff1ec",
+   "hair": "#96333f"
+  }
  }
 }
