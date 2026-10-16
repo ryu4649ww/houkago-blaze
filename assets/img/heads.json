@@ -182,5 +182,26 @@
    "skin": "#fff1ec",
    "hair": "#96333f"
   }
+ },
+ "karen": {
+  "w": 242,
+  "h": 240,
+  "neck": [
+   124.3,
+   226.1
+  ],
+  "upp": 0.1747,
+  "tex": [
+   "top",
+   "bottom",
+   "skin",
+   "hair"
+  ],
+  "colors": {
+   "top": "#dbe0e3",
+   "bottom": "#dbe0e2",
+   "skin": "#e4aa90",
+   "hair": "#f2e3d8"
+  }
  }
 }
